@@ -23,11 +23,11 @@ public class ProductController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<?> delete(@RequestBody Product product) {
+    public ResponseEntity<?> delete(@RequestBody long id) {
 
         try {
-            productService.deleteProduct(product);
-            return new ResponseEntity<>(product, HttpStatus.OK);
+            productService.deleteProduct(id);
+            return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error deleting the product", HttpStatus.INTERNAL_SERVER_ERROR);
         }
