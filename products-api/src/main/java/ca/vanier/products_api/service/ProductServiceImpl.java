@@ -1,5 +1,7 @@
 package ca.vanier.products_api.service;
 
+import java.lang.classfile.ClassFile.Option;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,12 @@ public class ProductServiceImpl implements ProductService {
             return productRepository.save(existingProduct); // Save the updated product
         }
         return null;  // Return null if the product wasn't found
+    }
+
+    @Override
+    public void deleteProduct(Long id) throws NoSuchElementException {
+        Product product = productRepository.findById(id).get();
+        productRepository.delete(product);
     }
 
 }
