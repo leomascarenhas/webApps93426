@@ -10,6 +10,8 @@ public interface ProductService {
 
     Optional<Product> findById(Long id);
 
+    Product updateExistingProduct(Long id, Product productDetails);
+
     void deleteProduct(Long id);
 
 }
