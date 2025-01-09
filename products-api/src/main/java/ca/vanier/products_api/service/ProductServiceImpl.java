@@ -31,11 +31,14 @@ public class ProductServiceImpl implements ProductService {
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Product with ID " + id + " not found"));// Find the product by ID
         if (existingProduct != null) {
-            existingProduct.setDescr(productDetails.getDescr()); 
-            existingProduct.setPrice(productDetails.getPrice());
-            existingProduct.setCategory(productDetails.getCategory());
-            // Update other fields as needed
-            return productRepository.save(existingProduct); // Save the updated product
+            if (existingProduct.fieldCheckOK(productDetails)) {
+                existingProduct.setDescr(productDetails.getDescr()); 
+                existingProduct.setPrice(productDetails.getPrice());
+                existingProduct.setCategory(productDetails.getCategory());
+                // Update other fields as needed
+                return productRepository.save(existingProduct); // Save the updated product
+            }
+            else return null;
         }
         return null;  // Return null if the product wasn't found
     }

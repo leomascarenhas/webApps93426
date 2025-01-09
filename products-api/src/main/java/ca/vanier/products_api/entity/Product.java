@@ -44,5 +44,10 @@ public class Product {
     public void setCategory(String category) {
         this.category = category;
     }
-
+    public boolean fieldCheckOK(Product product) {
+        if (product.getDescr() == null || product.getDescr().trim().isEmpty()) return false;
+        if (product.getCategory() == null || product.getCategory().trim().isEmpty()) return false;
+        if (product.getPrice() == 0.0) return false;
+        return true;
+    }
 }
