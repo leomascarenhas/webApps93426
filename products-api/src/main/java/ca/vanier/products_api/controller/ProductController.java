@@ -15,10 +15,32 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @GetMapping("/all")
+    public ResponseEntity<?> findAll() {
+
+        try {
+            return ResponseEntity.ok(productService.findAll());
+        } catch (Exception e) {
+            return new ResponseEntity<>("No products found", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/find/{id}")
+    public ResponseEntity<?> findById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(productService.findById(id));
+        } catch (Exception e) {
+            return new ResponseEntity<>("Product with ID " + id + " not found", HttpStatus.NOT_FOUND);
+        }
+    }
+
     @PostMapping("/save")
-    public Product save(@RequestBody Product product) {
-        Product productCreated = productService.save(product);
-        return productCreated;
+    public ResponseEntity<?> save(@RequestBody Product product) {
+        try {
+            return new ResponseEntity<>(productService.save(product), HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @DeleteMapping("/delete")
@@ -26,7 +48,7 @@ public class ProductController {
 
         try {
             productService.deleteProduct(id);
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>("Product deleted successfully",HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error deleting the product", HttpStatus.INTERNAL_SERVER_ERROR);
         }
