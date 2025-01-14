@@ -2,6 +2,8 @@ package ca.vanier.products_api.service;
 
 import java.util.Optional;
 
+import ca.vanier.products_api.entity.Category;
+import ca.vanier.products_api.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,16 +12,30 @@ import ca.vanier.products_api.repository.ProductRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 @Service
 public class ProductServiceImpl implements ProductService {
     //for enhanced logging
-private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     @Override
     public Product save(Product product) {
+
+        Category category = product.getCategory();
+        if (category != null) {
+            Optional<Category> existingCategory = categoryRepository.findByName(category.getName());
+            if (existingCategory.isPresent()) {
+                product.setCategory(existingCategory.get());
+            } else {
+                categoryRepository.save(category);
+            }
+        }
         if (product.getId() != null) {
             throw new IllegalArgumentException("Product cannot be null or empty");
         }
