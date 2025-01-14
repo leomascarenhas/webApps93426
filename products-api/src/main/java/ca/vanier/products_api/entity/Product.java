@@ -16,6 +16,8 @@ public class Product {
     private Long id;
     private String descr;
     private double price;
+
+    // Assignment: Replace it by a @Entity
     private String category;
 
     @OneToMany(cascade = CascadeType.ALL)
