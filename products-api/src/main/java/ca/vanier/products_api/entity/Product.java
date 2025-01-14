@@ -1,16 +1,13 @@
-package ca.vanier.products_api.entity;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import java.util.List;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-
-// TODO: Fix it
-// import lombok.Getter;
-// import lombok.Setter;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity
-// @Getter
-// @Setter
 public class Product {
     
     @Id
@@ -18,9 +15,13 @@ public class Product {
     private Long id;
     private String descr;
     private double price;
-    private String category;
 
-    //private 
+    // Assignment: Replace it by a @Entity
+    @OneToOne(cascade = CascadeType.ALL)
+    private Category category;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Tag> tags;
 
     public Long getId() {
         return id;
@@ -40,16 +41,17 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
-    public boolean fieldCheckOK(Product product) {
-        if (product.getDescr() == null || product.getDescr().trim().isEmpty()) return false;
-        if (product.getCategory() == null || product.getCategory().trim().isEmpty()) return false;
-        if (product.getPrice() == 0.0) return false;
-        return true;
+    public List<Tag> getTags() {
+        return tags;
     }
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
 }
