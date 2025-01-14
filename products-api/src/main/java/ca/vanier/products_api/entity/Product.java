@@ -4,17 +4,22 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Product {
-    
+
     @Id
     @GeneratedValue
     private Long id;
 
-    @NotBlank(message= "Description cannot be empty")
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Tag> tags;
+    @NotBlank(message = "Description cannot be empty")
     @Column(nullable = false, length = 255)
     private String descr;
 
@@ -38,10 +43,10 @@ public class Product {
 
     //CONSTRUCTIONS HERE
     public Product() {
-    // No args constructor for JPA
+        // No args constructor for JPA
     }
 
-// PARAMETERIZED CONSTRUCTOR
+    // PARAMETERIZED CONSTRUCTOR
     public Product(String descr, BigDecimal price, String category) {
         this.descr = descr;
         this.price = price;
@@ -126,8 +131,8 @@ public class Product {
 
     @Override
     public boolean equals(Object obj) {
-        if(this == obj) return true;
-        if(obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
         Product product = (Product) obj;
         return id != null && id.equals(product.id);
     }
