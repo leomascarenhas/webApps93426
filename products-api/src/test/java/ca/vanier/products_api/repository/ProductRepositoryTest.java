@@ -1,7 +1,6 @@
-package ca.vanier.products_api;
+package ca.vanier.products_api.repository;
 
 import ca.vanier.products_api.entity.Product;
-import ca.vanier.products_api.repository.ProductRepository;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 class ProductRepositoryTest {
-
+    /**
+     * Product Repository Integration Test
+     */
     @Autowired
     private ProductRepository productRepository;
 

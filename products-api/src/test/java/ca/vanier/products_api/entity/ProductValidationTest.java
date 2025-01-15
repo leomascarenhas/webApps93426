@@ -1,6 +1,5 @@
-package ca.vanier.products_api;
+package ca.vanier.products_api.entity;
 
-import ca.vanier.products_api.entity.Product;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
@@ -15,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 class ProductValidationTest {
-
+//TODO Missing Tag Validation Unit Testing
     private final Validator validator;
 
     public ProductValidationTest() {

@@ -1,7 +1,6 @@
-package ca.vanier.products_api;
+package ca.vanier.products_api.service;
 
 import ca.vanier.products_api.entity.Product;
-import ca.vanier.products_api.service.ProductService;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;

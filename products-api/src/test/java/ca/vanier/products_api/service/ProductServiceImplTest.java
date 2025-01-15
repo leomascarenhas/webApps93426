@@ -1,9 +1,8 @@
-package ca.vanier.products_api;
+package ca.vanier.products_api.service;
 
 import ca.vanier.products_api.entity.Product;
 import ca.vanier.products_api.exception.ProductNotFoundException;
 import ca.vanier.products_api.repository.ProductRepository;
-import ca.vanier.products_api.service.ProductService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

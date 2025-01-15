@@ -16,7 +16,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/product")
 public class ProductController {
-
+    /**
+     * The DB for some reason can only be accessed though the /H2-console according to ~/resources/applications.properties
+     */
     private final ProductService productService;
 
     @Autowired

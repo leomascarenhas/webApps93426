@@ -1,4 +1,4 @@
-package ca.vanier.products_api;
+package ca.vanier.products_api.controller;
 
 import ca.vanier.products_api.entity.Product;
 import ca.vanier.products_api.repository.ProductRepository;
@@ -17,7 +17,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ProductControllerTest {
-
+    /**
+     * ProductController Integration Test
+     */
     @LocalServerPort
     private int port;
 
