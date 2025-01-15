@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.StreamSupport;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -33,13 +32,17 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public Product updateProduct(Long id, Product updatedProduct) {
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new ProductNotFoundException("Product with id " + id + " not found"));
+
+        // Update fields
         existingProduct.setDescription(updatedProduct.getDescription());
         existingProduct.setPrice(updatedProduct.getPrice());
         existingProduct.setCategory(updatedProduct.getCategory());
-        return productRepository.save(existingProduct);
+
+        return productRepository.save(existingProduct); // Save the updated product
     }
 
     @Override
@@ -53,8 +56,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @Transactional(readOnly = true)
     public List<Product> findAll() {
-        Iterable<Product> products = productRepository.findAll();
-        return StreamSupport.stream(products.spliterator(), false).toList();
+        return productRepository.findAll(); // Directly return the list
     }
 
     @Override

@@ -2534,3 +2534,738 @@ insert into product (category,created_at,description,price,updated_at,version,id
 2025-01-12T15:14:19.817-05:00  INFO 21952 --- [products-api] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-01-12T15:14:19.818-05:00  INFO 21952 --- [products-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
 2025-01-12T15:14:19.819-05:00  INFO 21952 --- [products-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-01-15T12:36:32.230-05:00  INFO 22644 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 22644 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T12:36:32.234-05:00  INFO 22644 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T12:36:32.292-05:00  INFO 22644 --- [products-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-15T12:36:32.292-05:00  INFO 22644 --- [products-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-15T12:36:33.103-05:00  INFO 22644 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T12:36:33.147-05:00  INFO 22644 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2025-01-15T12:36:33.772-05:00  INFO 22644 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T12:36:33.793-05:00  INFO 22644 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T12:36:33.793-05:00  INFO 22644 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T12:36:33.840-05:00  INFO 22644 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T12:36:33.841-05:00  INFO 22644 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1547 ms
+2025-01-15T12:36:33.949-05:00  INFO 22644 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-15T12:36:34.162-05:00  INFO 22644 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T12:36:34.164-05:00  INFO 22644 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-15T12:36:34.173-05:00  INFO 22644 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T12:36:34.341-05:00  INFO 22644 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T12:36:34.411-05:00  INFO 22644 --- [products-api] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-15T12:36:34.446-05:00  INFO 22644 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T12:36:34.735-05:00  INFO 22644 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T12:36:34.815-05:00  INFO 22644 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T12:36:35.678-05:00  INFO 22644 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T12:36:35.718-05:00  INFO 22644 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T12:36:36.093-05:00  WARN 22644 --- [products-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T12:36:36.750-05:00  INFO 22644 --- [products-api] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T12:36:36.759-05:00  INFO 22644 --- [products-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15T12:36:36.828-05:00  INFO 22644 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-15T12:36:36.837-05:00  INFO 22644 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Started ProductsApiApplication in 4.967 seconds (process running for 6.41)
+2025-01-15T12:36:37.454-05:00  INFO 22644 --- [products-api] [RMI TCP Connection(4)-192.168.1.13] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-15T12:36:37.454-05:00  INFO 22644 --- [products-api] [RMI TCP Connection(4)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-15T12:36:37.455-05:00  INFO 22644 --- [products-api] [RMI TCP Connection(4)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-01-15T12:39:15.600-05:00  INFO 22644 --- [products-api] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-15T12:39:15.604-05:00  INFO 22644 --- [products-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-15T12:39:15.608-05:00  INFO 22644 --- [products-api] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T12:39:15.624-05:00  INFO 22644 --- [products-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-15T12:39:15.836-05:00  INFO 22644 --- [products-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-15T12:48:13.201-05:00  INFO 15976 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 15976 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T12:48:13.204-05:00  INFO 15976 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T12:48:13.264-05:00  INFO 15976 --- [products-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-15T12:48:13.264-05:00  INFO 15976 --- [products-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-15T12:48:14.183-05:00  INFO 15976 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T12:48:14.237-05:00  INFO 15976 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 1 JPA repository interface.
+2025-01-15T12:48:14.905-05:00  INFO 15976 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T12:48:14.919-05:00  INFO 15976 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T12:48:14.919-05:00  INFO 15976 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T12:48:14.966-05:00  INFO 15976 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T12:48:14.967-05:00  INFO 15976 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1702 ms
+2025-01-15T12:48:15.076-05:00  INFO 15976 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-15T12:48:15.285-05:00  INFO 15976 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T12:48:15.287-05:00  INFO 15976 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-15T12:48:15.297-05:00  INFO 15976 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T12:48:15.476-05:00  INFO 15976 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T12:48:15.543-05:00  INFO 15976 --- [products-api] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-15T12:48:15.580-05:00  INFO 15976 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T12:48:15.852-05:00  INFO 15976 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T12:48:15.930-05:00  INFO 15976 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T12:48:16.807-05:00  INFO 15976 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T12:48:16.847-05:00  INFO 15976 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T12:48:17.137-05:00  INFO 15976 --- [products-api] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-15T12:48:17.679-05:00  WARN 15976 --- [products-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T12:48:18.343-05:00  INFO 15976 --- [products-api] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T12:48:18.354-05:00  INFO 15976 --- [products-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15T12:48:18.431-05:00  INFO 15976 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-15T12:48:18.441-05:00  INFO 15976 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Started ProductsApiApplication in 5.72 seconds (process running for 6.561)
+2025-01-15T12:48:19.027-05:00  INFO 15976 --- [products-api] [RMI TCP Connection(1)-192.168.1.13] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-15T12:48:19.027-05:00  INFO 15976 --- [products-api] [RMI TCP Connection(1)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-15T12:48:19.029-05:00  INFO 15976 --- [products-api] [RMI TCP Connection(1)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-01-15T12:54:29.480-05:00  WARN 15976 --- [products-api] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<ca.vanier.products_api.entity.Product> ca.vanier.products_api.controller.ProductController.createProduct(ca.vanier.products_api.entity.Product)]
+2025-01-15T12:55:45.913-05:00  INFO 15976 --- [products-api] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 13 class path changes (0 additions, 13 deletions, 0 modifications)
+2025-01-15T12:55:45.926-05:00  INFO 15976 --- [products-api] [Thread-6] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-15T12:55:45.932-05:00  INFO 15976 --- [products-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-15T12:55:45.938-05:00  INFO 15976 --- [products-api] [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T12:55:45.947-05:00  INFO 15976 --- [products-api] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-15T12:55:45.964-05:00  INFO 15976 --- [products-api] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-15T12:56:47.362-05:00  INFO 7952 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 7952 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T12:56:47.364-05:00  INFO 7952 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T12:56:47.418-05:00  INFO 7952 --- [products-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-15T12:56:47.418-05:00  INFO 7952 --- [products-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-15T12:56:48.214-05:00  INFO 7952 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T12:56:48.259-05:00  INFO 7952 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2025-01-15T12:56:48.874-05:00  INFO 7952 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T12:56:48.887-05:00  INFO 7952 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T12:56:48.887-05:00  INFO 7952 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T12:56:48.931-05:00  INFO 7952 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T12:56:48.932-05:00  INFO 7952 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1512 ms
+2025-01-15T12:56:49.033-05:00  INFO 7952 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-15T12:56:50.230-05:00  INFO 7952 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-15T12:56:51.324-05:00  INFO 7952 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T12:56:51.391-05:00  INFO 7952 --- [products-api] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-15T12:56:51.425-05:00  INFO 7952 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T12:56:51.705-05:00  INFO 7952 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T12:56:51.735-05:00  INFO 7952 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-15T12:56:52.748-05:00  WARN 7952 --- [products-api] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90020, SQLState: 90020
+2025-01-15T12:56:52.748-05:00 ERROR 7952 --- [products-api] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : Database may be already in use: "C:/Users/Inmyo/OneDrive/Documents/GitHub/webApps93426/products-api/productsapi.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-232]
+2025-01-15T12:56:52.749-05:00  WARN 7952 --- [products-api] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Database may be already in use: "C:/Users/Inmyo/OneDrive/Documents/GitHub/webApps93426/products-api/productsapi.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-232]] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.0.jar:6.2.0]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.0.jar:6.2.0]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.0.jar:6.2.0]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.0.jar:6.2.0]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1849) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1798) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:288) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.0.jar:6.2.0]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.0.jar:6.2.0]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.0.jar:3.4.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.0.jar:3.4.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.0.jar:3.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.0.jar:3.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.0.jar:3.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.0.jar:3.4.0]
+	at ca.vanier.products_api.ProductsApiApplication.main(ProductsApiApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.0.jar:3.4.0]
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database may be already in use: "C:/Users/Inmyo/OneDrive/Documents/GitHub/webApps93426/products-api/productsapi.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.get(DbException.java:212) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:165) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.db.Store.<init>(Store.java:142) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.Database.<init>(Database.java:326) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.Engine.openSession(Engine.java:92) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.Engine.openSession(Engine.java:222) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.Engine.createSession(Engine.java:201) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.Driver.connect(Driver.java:59) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	... 38 common frames omitted
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/Inmyo/OneDrive/Documents/GitHub/webApps93426/products-api/productsapi.mv.db [2.3.232/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.mvstore.db.Store.<init>(Store.java:133) ~[h2-2.3.232.jar:2.3.232]
+	... 55 common frames omitted
+
+2025-01-15T12:56:52.756-05:00 ERROR 7952 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-01-15T12:56:52.756-05:00  WARN 7952 --- [products-api] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-01-15T12:56:52.759-05:00  INFO 7952 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-01-15T12:56:52.770-05:00  INFO 7952 --- [products-api] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-15T12:56:52.787-05:00 ERROR 7952 --- [products-api] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:288) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.0.jar:6.2.0]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.0.jar:6.2.0]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.0.jar:3.4.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.0.jar:3.4.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.0.jar:3.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.0.jar:3.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.0.jar:3.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.0.jar:3.4.0]
+	at ca.vanier.products_api.ProductsApiApplication.main(ProductsApiApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.0.jar:3.4.0]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.0.jar:6.2.0]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.0.jar:6.2.0]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.0.jar:6.2.0]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.0.jar:6.2.0]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1849) ~[spring-beans-6.2.0.jar:6.2.0]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1798) ~[spring-beans-6.2.0.jar:6.2.0]
+	... 18 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:392) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.2.Final.jar:6.6.2.Final]
+	... 33 common frames omitted
+
+2025-01-15T13:03:08.035-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 8540 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T13:03:08.037-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T13:03:08.091-05:00  INFO 8540 --- [products-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-15T13:03:08.091-05:00  INFO 8540 --- [products-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-15T13:03:08.867-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T13:03:08.917-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2025-01-15T13:03:09.504-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T13:03:09.523-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T13:03:09.523-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T13:03:09.568-05:00  INFO 8540 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T13:03:09.569-05:00  INFO 8540 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1477 ms
+2025-01-15T13:03:09.674-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-15T13:03:09.863-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T13:03:09.865-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-15T13:03:09.874-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T13:03:10.026-05:00  INFO 8540 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T13:03:10.078-05:00  INFO 8540 --- [products-api] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-15T13:03:10.110-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T13:03:10.339-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T13:03:10.412-05:00  INFO 8540 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T13:03:11.325-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T13:03:11.367-05:00  INFO 8540 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:03:11.642-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-15T13:03:12.150-05:00  WARN 8540 --- [products-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T13:03:12.831-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T13:03:12.841-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15T13:03:12.913-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-15T13:03:12.922-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Started ProductsApiApplication in 5.315 seconds (process running for 5.999)
+2025-01-15T13:03:13.200-05:00  INFO 8540 --- [products-api] [RMI TCP Connection(1)-192.168.1.13] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-15T13:03:13.201-05:00  INFO 8540 --- [products-api] [RMI TCP Connection(1)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-15T13:03:13.202-05:00  INFO 8540 --- [products-api] [RMI TCP Connection(1)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-01-15T13:09:21.902-05:00  INFO 8540 --- [products-api] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-15T13:09:21.906-05:00  INFO 8540 --- [products-api] [Thread-6] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-15T13:09:21.909-05:00  INFO 8540 --- [products-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-15T13:09:21.917-05:00  INFO 8540 --- [products-api] [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:09:21.925-05:00  INFO 8540 --- [products-api] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-15T13:09:22.133-05:00  INFO 8540 --- [products-api] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-15T13:09:22.220-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 8540 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T13:09:22.221-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T13:09:22.528-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T13:09:22.539-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
+2025-01-15T13:09:22.663-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T13:09:22.665-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T13:09:22.665-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T13:09:22.684-05:00  INFO 8540 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T13:09:22.684-05:00  INFO 8540 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 460 ms
+2025-01-15T13:09:22.736-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-01-15T13:09:22.745-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T13:09:22.745-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-01-15T13:09:22.745-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T13:09:22.803-05:00  INFO 8540 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T13:09:22.806-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T13:09:22.816-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T13:09:22.818-05:00  INFO 8540 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T13:09:22.871-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T13:09:22.877-05:00  INFO 8540 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:09:23.054-05:00  WARN 8540 --- [products-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T13:09:23.449-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T13:09:23.456-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15T13:09:23.484-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-15T13:09:23.492-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Started ProductsApiApplication in 1.307 seconds (process running for 376.57)
+2025-01-15T13:09:23.496-05:00  INFO 8540 --- [products-api] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-01-15T13:11:01.706-05:00  INFO 8540 --- [products-api] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-01-15T13:11:01.708-05:00  INFO 8540 --- [products-api] [Thread-8] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-15T13:11:01.712-05:00  INFO 8540 --- [products-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-15T13:11:01.715-05:00  INFO 8540 --- [products-api] [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:11:01.718-05:00  INFO 8540 --- [products-api] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-01-15T13:11:01.729-05:00  INFO 8540 --- [products-api] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-01-15T13:11:01.818-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 8540 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T13:11:01.818-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T13:11:02.143-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T13:11:02.152-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 1 JPA repository interface.
+2025-01-15T13:11:02.294-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T13:11:02.294-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T13:11:02.294-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T13:11:02.318-05:00  INFO 8540 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T13:11:02.318-05:00  INFO 8540 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 498 ms
+2025-01-15T13:11:02.372-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-01-15T13:11:02.384-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T13:11:02.385-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-01-15T13:11:02.385-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T13:11:02.439-05:00  INFO 8540 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T13:11:02.442-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T13:11:02.451-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T13:11:02.453-05:00  INFO 8540 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T13:11:02.510-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T13:11:02.513-05:00  INFO 8540 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:11:02.525-05:00  WARN 8540 --- [products-api] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes\ca\vanier\products_api\controller\ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ca.vanier.products_api.service.ProductService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-01-15T13:11:02.525-05:00  INFO 8540 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:11:02.527-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-01-15T13:11:02.556-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-01-15T13:11:02.558-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-01-15T13:11:02.563-05:00  INFO 8540 --- [products-api] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-15T13:11:02.586-05:00 ERROR 8540 --- [products-api] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ca.vanier.products_api.controller.ProductController required a bean of type 'ca.vanier.products_api.service.ProductService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ca.vanier.products_api.service.ProductService' in your configuration.
+
+2025-01-15T13:12:29.685-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 8540 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T13:12:29.686-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T13:12:29.911-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T13:12:29.920-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 1 JPA repository interface.
+2025-01-15T13:12:30.019-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T13:12:30.020-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T13:12:30.020-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T13:12:30.038-05:00  INFO 8540 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-01-15T13:12:30.038-05:00  INFO 8540 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 352 ms
+2025-01-15T13:12:30.082-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-01-15T13:12:30.092-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn23: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T13:12:30.092-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-01-15T13:12:30.092-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T13:12:30.137-05:00  INFO 8540 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T13:12:30.139-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T13:12:30.145-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T13:12:30.147-05:00  INFO 8540 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T13:12:30.194-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T13:12:30.197-05:00  INFO 8540 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:12:30.329-05:00  WARN 8540 --- [products-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T13:12:30.660-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T13:12:30.665-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15T13:12:30.687-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-15T13:12:30.691-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Started ProductsApiApplication in 1.027 seconds (process running for 563.768)
+2025-01-15T13:12:30.692-05:00  INFO 8540 --- [products-api] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-01-15T13:17:10.950-05:00  INFO 8540 --- [products-api] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-01-15T13:17:10.951-05:00  INFO 8540 --- [products-api] [Thread-12] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-15T13:17:10.953-05:00  INFO 8540 --- [products-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-15T13:17:10.955-05:00  INFO 8540 --- [products-api] [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:17:10.958-05:00  INFO 8540 --- [products-api] [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-01-15T13:17:10.996-05:00  INFO 8540 --- [products-api] [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2025-01-15T13:17:11.057-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 8540 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T13:17:11.057-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T13:17:11.295-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T13:17:11.304-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 1 JPA repository interface.
+2025-01-15T13:17:11.433-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T13:17:11.436-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T13:17:11.436-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T13:17:11.456-05:00  INFO 8540 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-01-15T13:17:11.456-05:00  INFO 8540 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 397 ms
+2025-01-15T13:17:11.508-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2025-01-15T13:17:11.516-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection conn33: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T13:17:11.517-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2025-01-15T13:17:11.517-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T13:17:11.568-05:00  INFO 8540 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T13:17:11.570-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T13:17:11.577-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T13:17:11.579-05:00  INFO 8540 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T13:17:11.626-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T13:17:11.630-05:00  INFO 8540 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:17:11.639-05:00  WARN 8540 --- [products-api] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes\ca\vanier\products_api\controller\ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'ca.vanier.products_api.service.ProductService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-01-15T13:17:11.639-05:00  INFO 8540 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:17:11.641-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2025-01-15T13:17:11.653-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2025-01-15T13:17:11.655-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-01-15T13:17:11.660-05:00  INFO 8540 --- [products-api] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-15T13:17:11.665-05:00 ERROR 8540 --- [products-api] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in ca.vanier.products_api.controller.ProductController required a bean of type 'ca.vanier.products_api.service.ProductService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'ca.vanier.products_api.service.ProductService' in your configuration.
+
+2025-01-15T13:20:47.247-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 8540 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T13:20:47.247-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T13:20:47.471-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T13:20:47.480-05:00  INFO 8540 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 1 JPA repository interface.
+2025-01-15T13:20:47.578-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T13:20:47.579-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T13:20:47.579-05:00  INFO 8540 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T13:20:47.596-05:00  INFO 8540 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-01-15T13:20:47.597-05:00  INFO 8540 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 348 ms
+2025-01-15T13:20:47.642-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2025-01-15T13:20:47.649-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection conn35: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T13:20:47.650-05:00  INFO 8540 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2025-01-15T13:20:47.650-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T13:20:47.697-05:00  INFO 8540 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T13:20:47.699-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T13:20:47.707-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T13:20:47.709-05:00  INFO 8540 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-6)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T13:20:47.758-05:00  INFO 8540 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T13:20:47.763-05:00  INFO 8540 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:20:47.902-05:00  WARN 8540 --- [products-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T13:20:48.240-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T13:20:48.245-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15T13:20:48.268-05:00  INFO 8540 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-15T13:20:48.272-05:00  INFO 8540 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Started ProductsApiApplication in 1.049 seconds (process running for 1061.349)
+2025-01-15T13:20:48.273-05:00  INFO 8540 --- [products-api] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-01-15T13:28:16.040-05:00  INFO 8540 --- [products-api] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-15T13:28:16.043-05:00  INFO 8540 --- [products-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-15T13:28:16.045-05:00  INFO 8540 --- [products-api] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:28:16.060-05:00  INFO 8540 --- [products-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2025-01-15T13:28:16.090-05:00  INFO 8540 --- [products-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2025-01-15T13:28:40.022-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 10440 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T13:28:40.024-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T13:28:40.078-05:00  INFO 10440 --- [products-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-15T13:28:40.078-05:00  INFO 10440 --- [products-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-15T13:28:40.959-05:00  INFO 10440 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T13:28:41.011-05:00  INFO 10440 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2025-01-15T13:28:41.697-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T13:28:41.710-05:00  INFO 10440 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T13:28:41.710-05:00  INFO 10440 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T13:28:41.758-05:00  INFO 10440 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T13:28:41.758-05:00  INFO 10440 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1679 ms
+2025-01-15T13:28:41.867-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-15T13:28:42.103-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T13:28:42.105-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-15T13:28:42.116-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T13:28:42.293-05:00  INFO 10440 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T13:28:42.369-05:00  INFO 10440 --- [products-api] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2025-01-15T13:28:42.407-05:00  INFO 10440 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T13:28:42.708-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T13:28:42.797-05:00  INFO 10440 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T13:28:43.692-05:00  INFO 10440 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T13:28:43.733-05:00  INFO 10440 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:28:44.033-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-15T13:28:44.517-05:00  WARN 10440 --- [products-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T13:28:45.161-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T13:28:45.169-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15T13:28:45.248-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-15T13:28:45.258-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Started ProductsApiApplication in 5.66 seconds (process running for 6.349)
+2025-01-15T13:28:45.714-05:00  INFO 10440 --- [products-api] [RMI TCP Connection(2)-192.168.1.13] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-15T13:28:45.715-05:00  INFO 10440 --- [products-api] [RMI TCP Connection(2)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-15T13:28:45.716-05:00  INFO 10440 --- [products-api] [RMI TCP Connection(2)-192.168.1.13] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-01-15T13:31:57.420-05:00  WARN 10440 --- [products-api] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.math.BigDecimal` from Object value (token `JsonToken.START_OBJECT`)]
+2025-01-15T13:32:28.898-05:00  WARN 10440 --- [products-api] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.math.BigDecimal` from Object value (token `JsonToken.START_OBJECT`)]
+2025-01-15T13:40:11.496-05:00  INFO 10440 --- [products-api] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-15T13:40:11.501-05:00  INFO 10440 --- [products-api] [Thread-6] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-15T13:40:11.504-05:00  INFO 10440 --- [products-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-15T13:40:11.512-05:00  INFO 10440 --- [products-api] [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:40:11.522-05:00  INFO 10440 --- [products-api] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-15T13:40:11.526-05:00  INFO 10440 --- [products-api] [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-15T13:40:11.687-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 10440 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T13:40:11.687-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T13:40:12.040-05:00  INFO 10440 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T13:40:12.055-05:00  INFO 10440 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 JPA repository interface.
+2025-01-15T13:40:12.277-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T13:40:12.279-05:00  INFO 10440 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T13:40:12.279-05:00  INFO 10440 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T13:40:12.309-05:00  INFO 10440 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T13:40:12.309-05:00  INFO 10440 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 619 ms
+2025-01-15T13:40:12.397-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-01-15T13:40:12.414-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn12: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T13:40:12.415-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-01-15T13:40:12.415-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T13:40:12.514-05:00  INFO 10440 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T13:40:12.518-05:00  INFO 10440 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T13:40:12.538-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T13:40:12.541-05:00  INFO 10440 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T13:40:12.625-05:00  INFO 10440 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T13:40:12.631-05:00  INFO 10440 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:40:12.826-05:00  WARN 10440 --- [products-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T13:40:13.364-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T13:40:13.372-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15T13:40:13.409-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-15T13:40:13.416-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Started ProductsApiApplication in 1.77 seconds (process running for 694.507)
+2025-01-15T13:40:13.418-05:00  INFO 10440 --- [products-api] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-01-15T13:40:31.003-05:00  INFO 10440 --- [products-api] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-15T13:40:31.005-05:00  INFO 10440 --- [products-api] [Thread-8] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-15T13:40:31.007-05:00  INFO 10440 --- [products-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-15T13:40:31.010-05:00  INFO 10440 --- [products-api] [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:40:31.013-05:00  INFO 10440 --- [products-api] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-01-15T13:40:31.014-05:00  INFO 10440 --- [products-api] [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-01-15T13:40:31.094-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 10440 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T13:40:31.094-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T13:40:31.439-05:00  INFO 10440 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T13:40:31.450-05:00  INFO 10440 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 1 JPA repository interface.
+2025-01-15T13:40:31.593-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T13:40:31.594-05:00  INFO 10440 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T13:40:31.594-05:00  INFO 10440 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T13:40:31.614-05:00  INFO 10440 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T13:40:31.614-05:00  INFO 10440 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 517 ms
+2025-01-15T13:40:31.673-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-01-15T13:40:31.674-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn22: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T13:40:31.675-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-01-15T13:40:31.675-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T13:40:31.732-05:00  INFO 10440 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T13:40:31.734-05:00  INFO 10440 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T13:40:31.742-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T13:40:31.743-05:00  INFO 10440 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T13:40:31.788-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create global temporary table HTE_product(price numeric(10, 2), rn_ integer not null, version integer, created_at timestamp(6), id bigint, updated_at timestamp(6), category varchar(100), description varchar(255), primary key (rn_)) TRANSACTIONAL
+2025-01-15T13:40:31.793-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create global temporary table HTE_tag(rn_ integer not null, id bigint, description varchar(255), primary key (rn_)) TRANSACTIONAL
+2025-01-15T13:40:31.796-05:00  INFO 10440 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T13:40:31.796-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists product cascade 
+2025-01-15T13:40:31.796-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists tag cascade 
+2025-01-15T13:40:31.796-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    drop sequence if exists product_seq
+2025-01-15T13:40:31.796-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    drop sequence if exists tag_seq
+2025-01-15T13:40:31.796-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create sequence product_seq start with 1 increment by 50
+2025-01-15T13:40:31.797-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create sequence tag_seq start with 1 increment by 50
+2025-01-15T13:40:31.797-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create table product (
+        price numeric(10,2) not null,
+        version integer,
+        created_at timestamp(6),
+        id bigint not null,
+        updated_at timestamp(6),
+        category varchar(100) not null,
+        description varchar(255) not null,
+        primary key (id)
+    )
+2025-01-15T13:40:31.798-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create table tag (
+        id bigint not null,
+        product_id bigint,
+        description varchar(255),
+        primary key (id)
+    )
+2025-01-15T13:40:31.798-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists tag 
+       add constraint FKdal0uofqrt3xxhyig2jcd0dmi 
+       foreign key (product_id) 
+       references product
+2025-01-15T13:40:31.800-05:00  INFO 10440 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:40:31.916-05:00  WARN 10440 --- [products-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T13:40:32.245-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T13:40:32.251-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15T13:40:32.285-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-15T13:40:32.293-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Started ProductsApiApplication in 1.225 seconds (process running for 713.383)
+2025-01-15T13:40:32.295-05:00  INFO 10440 --- [products-api] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-01-15T13:41:20.246-05:00  INFO 10440 --- [products-api] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-01-15T13:41:20.247-05:00  INFO 10440 --- [products-api] [Thread-12] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-15T13:41:20.249-05:00  INFO 10440 --- [products-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-15T13:41:20.251-05:00  INFO 10440 --- [products-api] [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:41:20.251-05:00 DEBUG 10440 --- [products-api] [Thread-12] org.hibernate.SQL                        : 
+    drop table if exists product cascade 
+2025-01-15T13:41:20.251-05:00 DEBUG 10440 --- [products-api] [Thread-12] org.hibernate.SQL                        : 
+    drop table if exists tag cascade 
+2025-01-15T13:41:20.251-05:00 DEBUG 10440 --- [products-api] [Thread-12] org.hibernate.SQL                        : 
+    drop sequence if exists product_seq
+2025-01-15T13:41:20.251-05:00 DEBUG 10440 --- [products-api] [Thread-12] org.hibernate.SQL                        : 
+    drop sequence if exists tag_seq
+2025-01-15T13:41:20.252-05:00  INFO 10440 --- [products-api] [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-01-15T13:41:20.253-05:00  INFO 10440 --- [products-api] [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-01-15T13:41:20.314-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Starting ProductsApiApplication using Java 23.0.1 with PID 10440 (C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api\target\classes started by Inmyo in C:\Users\Inmyo\OneDrive\Documents\GitHub\webApps93426\products-api)
+2025-01-15T13:41:20.314-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T13:41:20.540-05:00  INFO 10440 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T13:41:20.549-05:00  INFO 10440 --- [products-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 1 JPA repository interface.
+2025-01-15T13:41:20.666-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T13:41:20.667-05:00  INFO 10440 --- [products-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T13:41:20.667-05:00  INFO 10440 --- [products-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-01-15T13:41:20.685-05:00  INFO 10440 --- [products-api] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T13:41:20.685-05:00  INFO 10440 --- [products-api] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 370 ms
+2025-01-15T13:41:20.730-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-01-15T13:41:20.731-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn32: url=jdbc:h2:file:./productsapi user=ADMIN
+2025-01-15T13:41:20.731-05:00  INFO 10440 --- [products-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-01-15T13:41:20.732-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./productsapi'
+2025-01-15T13:41:20.781-05:00  INFO 10440 --- [products-api] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T13:41:20.784-05:00  INFO 10440 --- [products-api] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T13:41:20.790-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T13:41:20.792-05:00  INFO 10440 --- [products-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-15T13:41:20.842-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create global temporary table HTE_product(price numeric(10, 2), rn_ integer not null, version integer, created_at timestamp(6), id bigint, updated_at timestamp(6), category varchar(100), description varchar(255), primary key (rn_)) TRANSACTIONAL
+2025-01-15T13:41:20.843-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create global temporary table HTE_tag(rn_ integer not null, id bigint, description varchar(255), primary key (rn_)) TRANSACTIONAL
+2025-01-15T13:41:20.848-05:00  INFO 10440 --- [products-api] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T13:41:20.859-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create table product (
+        id bigint not null,
+        category varchar(100) not null,
+        created_at timestamp(6),
+        description varchar(255) not null,
+        price numeric(10,2) not null,
+        updated_at timestamp(6),
+        version integer,
+        primary key (id)
+    )
+2025-01-15T13:41:20.860-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create table tag (
+        id bigint not null,
+        description varchar(255),
+        product_id bigint,
+        primary key (id)
+    )
+2025-01-15T13:41:20.861-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create sequence product_seq start with 1 increment by 50
+2025-01-15T13:41:20.861-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    create sequence tag_seq start with 1 increment by 50
+2025-01-15T13:41:20.862-05:00 DEBUG 10440 --- [products-api] [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists tag 
+       add constraint FKdal0uofqrt3xxhyig2jcd0dmi 
+       foreign key (product_id) 
+       references product
+2025-01-15T13:41:20.862-05:00  INFO 10440 --- [products-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:41:20.974-05:00  WARN 10440 --- [products-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T13:41:21.304-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T13:41:21.309-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-01-15T13:41:21.333-05:00  INFO 10440 --- [products-api] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-15T13:41:21.337-05:00  INFO 10440 --- [products-api] [restartedMain] c.v.products_api.ProductsApiApplication  : Started ProductsApiApplication in 1.047 seconds (process running for 762.429)
+2025-01-15T13:41:21.338-05:00  INFO 10440 --- [products-api] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-01-15T13:41:35.585-05:00  INFO 10440 --- [products-api] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-15T13:41:35.589-05:00  INFO 10440 --- [products-api] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-01-15T13:41:35.591-05:00  INFO 10440 --- [products-api] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T13:41:35.591-05:00  INFO 10440 --- [products-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-01-15T13:41:35.592-05:00  INFO 10440 --- [products-api] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.

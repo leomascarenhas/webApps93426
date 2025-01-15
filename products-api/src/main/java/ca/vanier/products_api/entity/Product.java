@@ -1,27 +1,30 @@
 package ca.vanier.products_api.entity;
 
 import jakarta.persistence.*;
-
-import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
-import jakarta.persistence.OneToMany;
+import org.hibernate.annotations.DynamicUpdate;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@DynamicUpdate
 public class Product {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Tag> tags;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "product_id") // Foreign key in the Tag table)
+    private List<Tag> tags = new ArrayList<>();
+
     @NotBlank(message = "Description cannot be empty")
     @Column(nullable = false, length = 255)
-    private String descr;
+    private String description;
 
     @Positive(message = "Price must be greater than zero")
     @Column(nullable = false, precision = 10, scale = 2)
@@ -30,16 +33,15 @@ public class Product {
     @NotBlank(message = "Category cannot be empty")
     @Column(nullable = false, length = 100)
     private String category;
+
     @Version
     private Integer version;
 
     @Column(updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
+    private LocalDateTime createdAt;
 
     @Column
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
+    private LocalDateTime updatedAt;
 
     //CONSTRUCTIONS HERE
     public Product() {
@@ -47,13 +49,30 @@ public class Product {
     }
 
     // PARAMETERIZED CONSTRUCTOR
-    public Product(String descr, BigDecimal price, String category) {
-        this.descr = descr;
+    public Product(String description, BigDecimal price, String category) {
+        this.description = description;
         this.price = price;
         this.category = category;
     }
 
+    public Product(String description, BigDecimal price, String category, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.description = description;
+        this.price = price;
+        this.category = category;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
 // GETTERS AND SETTERS
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
 
     public Long getId() {
         return id;
@@ -63,12 +82,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getDescr() {
-        return descr;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescr(String descr) {
-        this.descr = descr;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public BigDecimal getPrice() {
@@ -95,19 +114,19 @@ public class Product {
         this.version = version;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -115,17 +134,18 @@ public class Product {
 
     @PrePersist
     protected void onCreate() {
-        this.createdAt = new Date();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        this.updatedAt = new Date();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @Override
     public String toString() {
-        return "Product [id=" + id + ", descr=" + descr + ", price=" + price + ", category=" + category + "]";
+        return "Product [id=" + id + ", description=" + description + ", price=" + price + ", category=" + category + "]";
     }
 
 
@@ -140,5 +160,13 @@ public class Product {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    public void addTag(Tag tag) {
+        this.tags.add(tag);
+    }
+
+    public void removeTag(Tag tag) {
+        this.tags.remove(tag);
     }
 }

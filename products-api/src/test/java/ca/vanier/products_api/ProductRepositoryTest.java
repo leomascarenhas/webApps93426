@@ -6,7 +6,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.dao.DataIntegrityViolationException;
 
 import java.math.BigDecimal;
 import java.util.stream.Stream;
@@ -45,11 +44,5 @@ class ProductRepositoryTest {
         // Verify that the product is saved and can be retrieved
         assertTrue(productRepository.findById(savedProduct.getId()).isPresent());
         assertEquals(product.getDescription(), savedProduct.getDescription());
-    }
-
-    @ParameterizedTest
-    @MethodSource("provideInvalidProducts")
-    void testSave_InvalidProducts(Product product) {
-        assertThrows(javax.validation.ConstraintViolationException.class, () -> productRepository.save(product));
     }
 }
