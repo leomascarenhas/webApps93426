@@ -1,5 +1,11 @@
 package ca.vanier.products_api.entity;
 
+<<<<<<< Updated upstream
+=======
+import java.util.List;
+
+import ca.vanier.Category;
+>>>>>>> Stashed changes
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import java.util.List;
