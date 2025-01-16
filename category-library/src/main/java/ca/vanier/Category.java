@@ -1,4 +1,4 @@
-package main.java.ca.vanier;
+package ca.vanier;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
