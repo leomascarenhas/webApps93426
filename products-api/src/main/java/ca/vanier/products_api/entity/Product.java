@@ -1,3 +1,5 @@
+package ca.vanier.products_api.entity;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import java.util.List;
@@ -52,6 +54,10 @@ public class Product {
     }
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+    
+    public boolean fieldCheckOK(Product productDetails) {
+        return true;
     }
 
 }
