@@ -1,19 +1,15 @@
 package ca.vanier.products_api.entity;
 
-<<<<<<< Updated upstream
-=======
+import ca.vanier.Category; 
 import java.util.List;
 
-import ca.vanier.Category;
->>>>>>> Stashed changes
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import java.util.List;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
-
+ 
 @Entity
 public class Product {
     
@@ -22,14 +18,14 @@ public class Product {
     private Long id;
     private String descr;
     private double price;
-
+ 
     // Assignment: Replace it by a @Entity
     @OneToOne(cascade = CascadeType.ALL)
     private Category category;
-
+ 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Tag> tags;
-
+ 
     public Long getId() {
         return id;
     }
@@ -60,9 +56,9 @@ public class Product {
     public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
-    
+
     public boolean fieldCheckOK(Product productDetails) {
         return true;
     }
-
+ 
 }

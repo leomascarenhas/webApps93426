@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-public class Category {
+public class CategoryDemo {
 
     @Id
     @GeneratedValue
