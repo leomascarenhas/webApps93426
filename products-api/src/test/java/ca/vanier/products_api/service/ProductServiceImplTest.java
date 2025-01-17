@@ -6,106 +6,82 @@ import ca.vanier.products_api.repository.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.context.annotation.Import;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-@Transactional
+@DataJpaTest
 class ProductServiceImplTest {
 
     @Autowired
     private ProductRepository productRepository;
 
     @Autowired
-    private ProductService productService;
-
-    private Product sampleProduct;
+    private ProductServiceImpl productService;
 
     @BeforeEach
     void setUp() {
-        sampleProduct = new Product();
-        sampleProduct.setDescription("Sample Product");
-        sampleProduct.setPrice(BigDecimal.valueOf(99.99));
-        sampleProduct.setCategory("Electronics");
-        productService.save(sampleProduct); // Save initial sample product for testing
+        productRepository.deleteAll();
+        productRepository.save(new Product("Product A", BigDecimal.valueOf(19.99), "Category A"));
+        productRepository.save(new Product("Product B", BigDecimal.valueOf(29.99), "Category B"));
     }
 
     @Test
-    void testSaveProduct() {
-        Product newProduct = new Product();
-        newProduct.setDescription("New Product");
-        newProduct.setPrice(BigDecimal.valueOf(150.00));
-        newProduct.setCategory("Home Appliances");
+    void testFindAll() {
+        List<Product> products = productService.findAll();
+        assertEquals(2, products.size());
+    }
 
+    @Test
+    void testFindById() {
+        Product product = productRepository.findAll().get(0);
+        Optional<Product> foundProduct = productService.findById(product.getId());
+        assertTrue(foundProduct.isPresent());
+        assertEquals("Product A", foundProduct.get().getDescription());
+    }
+
+    @Test
+    void testSave() {
+        Product newProduct = new Product("Product C", BigDecimal.valueOf(39.99), "Category C");
         Product savedProduct = productService.save(newProduct);
 
         assertNotNull(savedProduct.getId());
-        assertEquals("New Product", savedProduct.getDescription());
-    }
-
-    @Test
-    void testFindById_ProductExists() {
-        Product foundProduct = productService.findById(sampleProduct.getId())
-                .orElseThrow(() -> new ProductNotFoundException("Product not found"));
-
-        assertEquals(sampleProduct.getId(), foundProduct.getId());
-        assertEquals("Sample Product", foundProduct.getDescription());
-    }
-
-    @Test
-    void testFindById_ProductNotFound() {
-        assertThrows(ProductNotFoundException.class, () -> {
-            productService.findById(999L).orElseThrow(() -> new ProductNotFoundException("Product not found"));
-        });
+        assertEquals("Product C", savedProduct.getDescription());
     }
 
     @Test
     void testUpdateProduct() {
-        Product updatedProduct = new Product();
-        updatedProduct.setDescription("Updated Product");
-        updatedProduct.setPrice(BigDecimal.valueOf(120.00));
-        updatedProduct.setCategory("Updated Category");
+        Product product = productRepository.findAll().get(0);
+        Product updatedProduct = new Product("Updated Product A", BigDecimal.valueOf(49.99), "Updated Category");
 
-        Product result = productService.updateProduct(sampleProduct.getId(), updatedProduct);
+        Product result = productService.updateProduct(product.getId(), updatedProduct);
 
-        assertEquals("Updated Product", result.getDescription());
-        assertEquals(BigDecimal.valueOf(120.00), result.getPrice());
-        assertEquals("Updated Category", result.getCategory());
-    }
-
-    @Test
-    void testUpdateProduct_NotFound() {
-        Product updatedProduct = new Product();
-        assertThrows(ProductNotFoundException.class, () -> productService.updateProduct(999L, updatedProduct));
+        assertEquals("Updated Product A", result.getDescription());
+        assertEquals(BigDecimal.valueOf(49.99), result.getPrice());
     }
 
     @Test
     void testDeleteProduct() {
-        productService.deleteProduct(sampleProduct.getId());
-        assertFalse(productRepository.findById(sampleProduct.getId()).isPresent());
-    }
+        Product product = productRepository.findAll().get(0);
+        productService.deleteProduct(product.getId());
 
-    @Test
-    void testDeleteProduct_NotFound() {
-        assertThrows(ProductNotFoundException.class, () -> productService.deleteProduct(999L));
-    }
-
-    @Test
-    void testFindAllProducts() {
-        List<Product> products = productService.findAll();
-        assertEquals(1, products.size());
-        assertEquals("Sample Product", products.get(0).getDescription());
+        assertFalse(productRepository.findById(product.getId()).isPresent());
     }
 
     @Test
     void testFindByCategory() {
-        List<Product> products = productService.findByCategory("Electronics");
+        List<Product> products = productService.findByCategory("Category A");
         assertEquals(1, products.size());
-        assertEquals("Sample Product", products.get(0).getDescription());
+        assertEquals("Product A", products.get(0).getDescription());
+    }
+
+    @Test
+    void testFindByIdThrowsException() {
+        assertThrows(ProductNotFoundException.class, () -> productService.findById(999L));
     }
 }

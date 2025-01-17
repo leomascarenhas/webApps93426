@@ -1,5 +1,6 @@
 package ca.vanier.products_api.entity;
 
+import ca.vanier.products_api.util.GlobalLogger;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
@@ -15,11 +16,10 @@ import java.util.List;
 public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "product_id") // Foreign key in the Tag table)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "product")// Foreign key in the Tag table)
     private List<Tag> tags = new ArrayList<>();
 
     @NotBlank(message = "Description cannot be empty")
@@ -48,11 +48,11 @@ public class Product {
         // No args constructor for JPA
     }
 
-    // PARAMETERIZED CONSTRUCTOR
     public Product(String description, BigDecimal price, String category) {
         this.description = description;
         this.price = price;
         this.category = category;
+        this.tags = new ArrayList<>();
     }
 
     public Product(String description, BigDecimal price, String category, LocalDateTime createdAt, LocalDateTime updatedAt) {
@@ -61,6 +61,7 @@ public class Product {
         this.category = category;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.tags = new ArrayList<>();
     }
 
 // GETTERS AND SETTERS
@@ -136,11 +137,13 @@ public class Product {
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
+        GlobalLogger.info(GlobalLogger.class, "Product created: " + this);
     }
 
     @PreUpdate
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
+        GlobalLogger.info(GlobalLogger.class, "Product updated: " + this);
     }
 
     @Override
@@ -163,6 +166,7 @@ public class Product {
     }
 
     public void addTag(Tag tag) {
+        tag.setProduct(this);
         this.tags.add(tag);
     }
 

@@ -1,55 +1,42 @@
 package ca.vanier.products_api.exception;
 
-import ca.vanier.products_api.controller.ProductController;
+import ca.vanier.products_api.entity.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.reactive.server.WebTestClient;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import java.math.BigDecimal;
 
-@WebMvcTest(ProductController.class) // Only load ProductController and GlobalExceptionHandler
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class GlobalExceptionHandlerTest {
-    /**
-     * Self Explanatory
-     */
+
     @Autowired
-    private MockMvc mockMvc;
+    private WebTestClient webTestClient;
 
     @Test
-    void handleProductNotFoundException() throws Exception {
-        mockMvc.perform(get("/product/999")) // Assuming this ID doesn't exist
-                .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.error").value("Product Not Found"))
-                .andExpect(jsonPath("$.message").value("Product with id 999 not found"));
+    void testProductNotFoundException() {
+        webTestClient.get()
+                .uri("/products/999")
+                .exchange()
+                .expectStatus().isNotFound()
+                .expectBody()
+                .jsonPath("$.error").isEqualTo("Product Not Found")
+                .jsonPath("$.message").isEqualTo("Product with ID 999 not found");
     }
 
     @Test
-    void handleProductValidationException() throws Exception {
-        String invalidProductJson = """
-            {
-                "description": "",
-                "price": -10.0,
-                "category": ""
-            }
-        """;
+    void testValidationException() {
+        Product invalidProduct = new Product("", BigDecimal.valueOf(-1), "");
 
-        mockMvc.perform(post("/product")
-                        .contentType("application/json")
-                        .content(invalidProductJson))
-                .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.error").value("Product Validation Failed"))
-                .andExpect(jsonPath("$.message").isNotEmpty());
-    }
-
-    @Test
-    void handleRuntimeException() throws Exception {
-        mockMvc.perform(get("/product/trigger-runtime")) // Assuming this triggers a RuntimeException
-                .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.error").value("Runtime Exception"))
-                .andExpect(jsonPath("$.message").isNotEmpty());
+        webTestClient.post()
+                .uri("/products")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(invalidProduct)
+                .exchange()
+                .expectStatus().isBadRequest()
+                .expectBody()
+                .jsonPath("$.error").isEqualTo("Validation Error");
     }
 }

@@ -13,11 +13,11 @@ import static jakarta.validation.Validation.buildDefaultValidatorFactory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-class ProductValidationTest {
+class ProductEntityValidationTest {
 //TODO Missing Tag Validation Unit Testing
     private final Validator validator;
 
-    public ProductValidationTest() {
+    public ProductEntityValidationTest() {
         ValidatorFactory factory = buildDefaultValidatorFactory();
         this.validator = factory.getValidator();
     }
