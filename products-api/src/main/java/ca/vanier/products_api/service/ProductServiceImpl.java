@@ -2,7 +2,7 @@ package ca.vanier.products_api.service;
 
 import java.util.Optional;
 
-import ca.vanier.products_api.entity.Category;
+import ca.vanier.product_category.entity.*;
 import ca.vanier.products_api.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,4 +61,3 @@ public class ProductServiceImpl implements ProductService {
         logger.info("Deleted product with id deleted successfully" + id);
     }
 }
-

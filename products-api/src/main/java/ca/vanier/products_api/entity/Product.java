@@ -2,6 +2,8 @@ package ca.vanier.products_api.entity;
 
 import java.util.List;
 
+import ca.vanier.product_category.entity.Category;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

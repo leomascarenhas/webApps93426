@@ -1,6 +1,6 @@
 package ca.vanier.products_api.repository;
 
-import ca.vanier.products_api.entity.Category;
+import ca.vanier.product_category.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
