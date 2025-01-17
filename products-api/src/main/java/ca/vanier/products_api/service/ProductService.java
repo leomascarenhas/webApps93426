@@ -21,15 +21,16 @@ public interface ProductService {
     Product updateProduct(Long id, Product product);
 
     List<Product> findByCategory(String category);
+
     // Add pagination for all products
     Page<Product> findAll(Pageable pageable);
 
     // Add pagination for products in a specific category
     Page<Product> findByCategory(String category, Pageable pageable);
+
     // Find products within a price range
     List<Product> findByPriceRange(BigDecimal minPrice, BigDecimal maxPrice);
 
     // Count products in a category
     long countProductsByCategory(String category);
-
 }

@@ -37,10 +37,10 @@ public class Product {
     @Version
     private Integer version;
 
-    @Column(updatable = false)
+    @Column(updatable = false, name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column
+    @Column(updatable = true, name = "updated_at")
     private LocalDateTime updatedAt;
 
     //CONSTRUCTIONS HERE
@@ -52,6 +52,16 @@ public class Product {
         this.description = description;
         this.price = price;
         this.category = category;
+        this.tags = new ArrayList<>();
+    }
+
+    public Product(Long id, String description, BigDecimal price, String category, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.description = description;
+        this.price = price;
+        this.category = category;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.tags = new ArrayList<>();
     }
 
@@ -137,13 +147,13 @@ public class Product {
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
-        GlobalLogger.info(GlobalLogger.class, "Product created: " + this);
+        GlobalLogger.info(Product.class, "Product created: " + this);
     }
 
     @PreUpdate
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
-        GlobalLogger.info(GlobalLogger.class, "Product updated: " + this);
+        GlobalLogger.info(Product.class, "Product updated: " + this);
     }
 
     @Override

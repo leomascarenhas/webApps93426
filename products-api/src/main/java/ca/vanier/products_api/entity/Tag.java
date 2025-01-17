@@ -6,7 +6,6 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 public class Tag {
-//TODO ID is not being auto incremented
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +22,7 @@ public class Tag {
     private Product product;
 
     public Tag() {
-
+        // Default constructor
     }
 
     public Tag(String name, String description, Product product) {
@@ -32,20 +31,13 @@ public class Tag {
         this.product = product;
     }
 
+    // Getters and Setters
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getName() {
@@ -56,6 +48,18 @@ public class Tag {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
     public void setProduct(Product product) {
         this.product = product;
         if (product != null && !product.getTags().contains(this)) {
@@ -63,9 +67,6 @@ public class Tag {
         }
     }
 
-    public Product getProduct() {
-        return product;
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,6 +79,7 @@ public class Tag {
     public int hashCode() {
         return getClass().hashCode();
     }
+
     @Override
     public String toString() {
         return "Tag{" +
@@ -87,5 +89,3 @@ public class Tag {
                 '}';
     }
 }
-
-
