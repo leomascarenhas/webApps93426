@@ -23,7 +23,7 @@ public class Product {
     private List<Tag> tags = new ArrayList<>();
 
     @NotBlank(message = "Description cannot be empty")
-    @Column(nullable = false, length = 255)
+    @Column(nullable = false)
     private String description;
 
     @Positive(message = "Price must be greater than zero")
@@ -40,7 +40,7 @@ public class Product {
     @Column(updatable = false, name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column(updatable = true, name = "updated_at")
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
     //CONSTRUCTIONS HERE

@@ -11,6 +11,7 @@
     <groupId>ca.vanier</groupId>
     <artifactId>products-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>products-api</name>
     <description>Demo project for Spring Boot</description>
     <url>https://github.com/leomascarenhas/webApps93426/tree/andrew's</url>
