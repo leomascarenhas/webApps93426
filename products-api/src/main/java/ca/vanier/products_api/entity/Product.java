@@ -6,6 +6,11 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+
+// TODO: Fix it
+// import lombok.Getter;
+// import lombok.Setter;
+
 import jakarta.persistence.OneToMany;
 
 @Entity
