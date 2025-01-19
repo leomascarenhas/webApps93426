@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping("/product")
 public class ProductController {
@@ -15,9 +14,8 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/all")
+    @GetMapping("/list")
     public ResponseEntity<?> findAll() {
-
         try {
             return ResponseEntity.ok(productService.findAll());
         } catch (Exception e) {
@@ -39,18 +37,7 @@ public class ProductController {
         try {
             return new ResponseEntity<>(productService.save(product), HttpStatus.CREATED);
         } catch (Exception e) {
-            return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> delete(@RequestBody long id) {
-
-        try {
-            productService.deleteProduct(id);
-            return new ResponseEntity<>("Product deleted successfully",HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Error deleting the product", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -61,6 +48,16 @@ public class ProductController {
             return ResponseEntity.ok(productService.updateExistingProduct(id, productDetails));
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<?> delete(@RequestBody long id) {
+        try {
+            productService.deleteProduct(id);
+            return new ResponseEntity<>("Product deleted successfully", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error deleting the product", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

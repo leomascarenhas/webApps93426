@@ -1,28 +1,25 @@
 package ca.vanier.products_api.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import ca.vanier.products_api.entity.Product;
 import ca.vanier.products_api.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.*;
-
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import ca.vanier.products_api.entity.Product;
-import ca.vanier.products_api.repository.ProductRepository;
-import org.springframework.transaction.annotation.Transactional;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-    //for enhanced logging
-private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
+
+    // for enhanced logging
+    private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     @Autowired
     private ProductRepository productRepository;
@@ -37,14 +34,14 @@ private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.
         if (product.getDescr().isEmpty()) {
             throw new IllegalArgumentException("Description cannot be empty");
         }
-        if(product.getPrice()<0){
+        if (product.getPrice() < 0) {
             throw new IllegalArgumentException("Price cannot be negative");
         }
         if (product.getCategory().isEmpty()) {
             throw new IllegalArgumentException("Category cannot be empty");
         }
-      
-      return productRepository.save(product);
+
+        return productRepository.save(product);
     }
 
     @Override
@@ -55,20 +52,20 @@ private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.
             throw new NoSuchElementException("Product with ID " + id + " not found");
         }
     }
+
     // Update an existing product
     public Product updateExistingProduct(Long id, Product productDetails) {
-
         Product existingProduct = productRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Product with ID " + id + " not found"));// Find the product by ID
+                .orElseThrow(() -> new EntityNotFoundException("Product with ID " + id + " not found"));// Find the
+                                                                                                        // product by ID
         existingProduct.setDescr(productDetails.getDescr());
         existingProduct.setPrice(productDetails.getPrice());
         existingProduct.setCategory(productDetails.getCategory());
         return productRepository.save(existingProduct); // Save the updated product
-
     }
 
     @Override
-    public List<Product> findAll(){
+    public List<Product> findAll() {
         List<Product> products = new ArrayList<>() {
         };
         productRepository.findAll().forEach(products::add);
