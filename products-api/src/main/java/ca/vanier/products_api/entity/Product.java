@@ -1,5 +1,8 @@
 package ca.vanier.products_api.entity;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -8,9 +11,9 @@ import jakarta.persistence.Id;
 // import lombok.Getter;
 // import lombok.Setter;
 
+import jakarta.persistence.OneToMany;
+
 @Entity
-// @Getter
-// @Setter
 public class Product {
     
     @Id
@@ -18,7 +21,12 @@ public class Product {
     private Long id;
     private String descr;
     private double price;
+
+    // Assignment: Replace it by a @Entity
     private String category;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Tag> tags;
 
     public Long getId() {
         return id;
@@ -43,6 +51,12 @@ public class Product {
     }
     public void setCategory(String category) {
         this.category = category;
+    }
+    public List<Tag> getTags() {
+        return tags;
+    }
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 
 }

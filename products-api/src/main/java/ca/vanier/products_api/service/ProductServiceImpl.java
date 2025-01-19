@@ -8,14 +8,31 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ca.vanier.products_api.entity.Product;
+import ca.vanier.products_api.repository.ProductRepository;
+import org.springframework.transaction.annotation.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class ProductServiceImpl implements ProductService {
+    //for enhanced logging
+private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     @Autowired
     private ProductRepository productRepository;
 
     @Override
     public Product save(Product product) {
+        if (product.getId() != null) {
+            throw new IllegalArgumentException("Product cannot be null or empty");
+        }
+        logger.info("Saving product: " + product.getId());
 
         if (product.getDescr().isEmpty()) {
             throw new IllegalArgumentException("Description cannot be empty");
@@ -26,9 +43,8 @@ public class ProductServiceImpl implements ProductService {
         if (product.getCategory().isEmpty()) {
             throw new IllegalArgumentException("Category cannot be empty");
         }
-
-
-        return productRepository.save(product);
+      
+      return productRepository.save(product);
     }
 
     @Override
@@ -64,9 +80,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void deleteProduct(Long id) throws NoSuchElementException {
-        Product product = productRepository.findById(id).get();
+    @Transactional
+    // Use transactional to ensure the task is closed after completion
+    public void deleteProduct(Long id) {
+        logger.info("Deleting product: " + id);
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException("Product with id " + id + " not found"));
         productRepository.delete(product);
+        logger.info("Deleted product with id deleted successfully" + id);
     }
 
 }
