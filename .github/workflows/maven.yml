@@ -27,14 +27,18 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
+
     - name: Build depedency - Category library
       run: mvn clean install --file category-library/pom.xml
       
-    - name: Build with Maven
-      run: |
-        # mvn clean install --file category-library/pom.xml
+    - name: Build ProductsAPI
+      run:
         mvn -B package --file products-api/pom.xml
-        # mvn -B package --file calculator-web/pom.xml
+
+    - name: Build CalculatorWeb
+      run: |
+        echo "Let's build all :D"
+        mvn -B package --file calculator-web/pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
