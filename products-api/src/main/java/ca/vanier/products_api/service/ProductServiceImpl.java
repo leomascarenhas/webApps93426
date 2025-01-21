@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-    //for enhanced logging
+    // for enhanced logging
     private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     @Autowired
@@ -31,6 +31,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product save(Product product) {
+        logger.info("Saving product: " + product.getId());
 
         Category category = product.getCategory();
         if (category != null) {
@@ -44,8 +45,6 @@ public class ProductServiceImpl implements ProductService {
         if (product.getId() != null) {
             throw new IllegalArgumentException("Product cannot be null or empty");
         }
-        logger.info("Saving product: " + product.getId());
-
         if (product.getDescr().isEmpty()) {
             throw new IllegalArgumentException("Description cannot be empty");
         }
