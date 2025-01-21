@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
 
         Category category = product.getCategory();
         if (category != null) {
-            Optional<Category> existingCategory = categoryRepository.findByName(category.getDescription());
+            Optional<Category> existingCategory = categoryRepository.findByDescription(category.getDescription());
             if (existingCategory.isPresent()) {
                 product.setCategory(existingCategory.get());
             } else {
