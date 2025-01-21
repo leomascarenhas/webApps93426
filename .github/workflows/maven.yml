@@ -27,9 +27,12 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
+    - name: Build depedency - Category library
+      run: mvn clean install --file category-library/pom.xml
+      
     - name: Build with Maven
       run: |
-        mvn clean install --file category-library/pom.xml
+        # mvn clean install --file category-library/pom.xml
         mvn -B package --file products-api/pom.xml
         # mvn -B package --file calculator-web/pom.xml
 
