@@ -7,13 +7,8 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-
-// TODO: Fix it
-// import lombok.Getter;
-// import lombok.Setter;
-
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class Product {
@@ -24,7 +19,7 @@ public class Product {
     private String descr;
     private double price;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     private Category category;
 
     @OneToMany(cascade = CascadeType.ALL)

@@ -5,27 +5,42 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import ca.vanier.products_api.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ca.vanier.Category;
 import ca.vanier.products_api.entity.Product;
 import ca.vanier.products_api.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class ProductServiceImpl implements ProductService {
-
-    // for enhanced logging
+    //for enhanced logging
     private static final Logger logger = LoggerFactory.getLogger(ProductServiceImpl.class);
 
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     @Override
     public Product save(Product product) {
+
+        Category category = product.getCategory();
+        if (category != null) {
+            Optional<Category> existingCategory = categoryRepository.findByName(category.getDescription());
+            if (existingCategory.isPresent()) {
+                product.setCategory(existingCategory.get());
+            } else {
+                categoryRepository.save(category);
+            }
+        }
         if (product.getId() != null) {
             throw new IllegalArgumentException("Product cannot be null or empty");
         }
