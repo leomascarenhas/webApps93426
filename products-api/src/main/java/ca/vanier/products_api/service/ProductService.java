@@ -9,12 +9,12 @@ public interface ProductService {
 
     Product save(Product product);
 
-    Optional<Product> findById(Long id);
+    Product update(Long id, Product productDetails);
 
-    Product updateExistingProduct(Long id, Product productDetails);
+    Optional<Product> findById(Long id);
 
     List<Product> findAll();
 
-    void deleteProduct(Long id);
+    void delete(Long id);
 
 }
