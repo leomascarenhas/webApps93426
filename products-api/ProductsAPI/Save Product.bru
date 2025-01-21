@@ -1,0 +1,25 @@
+meta {
+  name: Save Product
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{host}}/product/save
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "descr": "eau",
+      "price": 1.0,
+      "category": {
+        "description": "drinks"
+      },
+      "tags": [
+          { "description": "energy"},
+          { "description": "pre-workout" }
+      ]
+  }
+}
