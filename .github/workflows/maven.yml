@@ -27,6 +27,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Build with library
+      run: mvn -B package --file category-library/pom.xml
     - name: Build with Maven
       run: mvn -B package --file products-api/pom.xml
 
