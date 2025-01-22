@@ -1,0 +1,54 @@
+name: Spring Boot CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Java
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17' # Use the version your project requires
+          distribution: 'temurin'
+
+      # Step 3: Cache Maven dependencies
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # Step 4: Clean, compile, and test
+      - name: Build and test
+        run: |
+          mvn clean compile test
+
+      # Step 5: Run the application (optional)
+      - name: Run application
+        run: |
+          nohup mvn spring-boot:run & # Run in the background
+          sleep 30 # Wait for the app to start
+          curl -X GET http://localhost:8080/actuator/health # Check if the app is running
+
+  # Optional: Deploy job
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deployment step (e.g., AWS, GCP, or other providers)
+        run: echo "Deployment steps go here"

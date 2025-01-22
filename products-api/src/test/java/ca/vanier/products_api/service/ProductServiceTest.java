@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 import java.util.stream.Stream;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -60,6 +59,6 @@ class ProductServiceTest {
     @ParameterizedTest
     @MethodSource("provideInvalidProducts")
     void testSaveInvalidProducts(Product product) {
-        assertThrows(IllegalArgumentException.class, () -> productService.save(product));
+        assertThrows(jakarta.validation.ConstraintViolationException.class, () -> productService.save(product));
     }
 }
