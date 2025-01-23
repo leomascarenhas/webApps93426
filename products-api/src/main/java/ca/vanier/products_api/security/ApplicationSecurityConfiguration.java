@@ -10,6 +10,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.config.Customizer;
 
 
 @Configuration
@@ -25,21 +26,15 @@ public class ApplicationSecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .csrf().disable()
-                .headers().frameOptions().disable();
+                .csrf(csrf -> csrf.disable())
+                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()))
 
-        http
-                .authorizeHttpRequests()
-                .requestMatchers("/", "index")
-                .permitAll()
-                .anyRequest()
-                .authenticated()
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/index.html", "/greeting").permitAll()
+                        .anyRequest().authenticated())
 
-                .and()
-                .httpBasic()
-
-                .and()
-                .formLogin();
+                .httpBasic(Customizer.withDefaults())
+                .formLogin(Customizer.withDefaults());
 
         return http.build();
     }
