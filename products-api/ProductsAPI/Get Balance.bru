@@ -1,0 +1,19 @@
+meta {
+  name: Get Balance
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{host}}/balance?name=Leo
+  body: none
+  auth: inherit
+}
+
+params:query {
+  name: Leo
+}
+
+headers {
+  Accept-Language: fr
+}
